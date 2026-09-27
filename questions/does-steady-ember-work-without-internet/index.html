@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Does Steady Ember Work Without Internet? (Fully Offline Habit Tracker)</title>
+<meta name="description" content="Yes. The release build requests no internet permission: habits live in a local SQLite database. Only downloading the app and updates need a connection.">
+<link rel="canonical" href="https://n8us.github.io/steady-app/questions/does-steady-ember-work-without-internet/">
+<meta property="og:title" content="Does Steady Ember Work Without Internet? (Fully Offline Habit Tracker)">
+<meta property="og:description" content="Yes, fully. No internet permission in the release build, local SQLite storage, and an on-device notes engine. Only downloads and updates need a connection.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://n8us.github.io/steady-app/questions/does-steady-ember-work-without-internet/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Does Steady Ember Work Without Internet? (Fully Offline Habit Tracker)">
+<meta name="twitter:description" content="Yes, fully. No internet permission in the release build, local SQLite storage, and an on-device notes engine. Only downloads and updates need a connection.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<header class="site">
+<div class="wrap">
+<a class="wordmark" href="../../">Steady Ember</a>
+<nav class="site-links">
+<a href="../../guides/">Guides</a>
+<a href="../">Questions</a>
+<a href="../../why/">Why Steady Ember</a>
+<a class="btn-nav" href="https://play.google.com/store/apps/details?id=dev.steady.steady" target="_blank" rel="noopener">Get the app</a>
+</nav>
+</div>
+</header>
+
+<main class="page">
+<div class="wrap">
+<p class="crumb"><a href="../../">Home</a> · <a href="../">Questions</a> · Works without internet</p>
+<h1>Does Steady Ember work without internet?</h1>
+<p class="lede">Everything inside the app runs without a connection. Two things outside it do not.</p>
+<p class="meta">Updated 27 September 2026 · 3 min read</p>
+
+<div class="prose">
+
+<div class="answer">
+<span class="tag">Short answer</span>
+<p>Yes, fully. The release build does not even request the internet permission, so nothing in the app can make a network request. Habits, streaks, notes and history sit in a local SQLite database on your phone. Only downloading the app and receiving updates need a connection.</p>
+</div>
+
+<h2>What runs entirely on your phone</h2>
+
+<p>The app is built to work in aeroplane mode, and that is a design constraint rather than a fallback. Practically, it means:</p>
+
+<ul>
+<li>Your habits live in an <strong>SQLite database</strong> in local device storage</li>
+<li>There is <strong>no account</strong> — nothing to sign into, no server holding a copy</li>
+<li>There are <strong>no analytics SDKs</strong> — no Firebase, no Mixpanel, no background reporting</li>
+<li>Reminders, streaks, freezes, statistics and heatmaps are all calculated on the device</li>
+<li>CSV and JSON export and AES-256-GCM encrypted backups are written to storage you control</li>
+</ul>
+
+<h2>The notes insight engine is local, not cloud AI</h2>
+
+<p>Daily notes are read by a deterministic tone and vocabulary engine that runs on the device. The same note produces the same reading every time, which is the point: it is a rule-based summary of what you wrote, not a model called over a network. Your notes are never sent anywhere to be interpreted, because there is nowhere to send them.</p>
+
+<h2>Health Connect stays on the device too</h2>
+
+<p>Sync reads steps, hydration and sleep from Health Connect, which is an on-device store on Android. That is a local read followed by a local write — the same kind of operation as opening any other database on your phone, with no network request involved at any step.</p>
+
+<h2>What does need the internet</h2>
+
+<div class="table-scroll">
+<table class="features">
+<thead>
+<tr><th>Action</th><th>Needs internet</th></tr>
+</thead>
+<tbody>
+<tr><td>Installing the app</td><td>Yes — Google Play</td></tr>
+<tr><td>Receiving an update</td><td>Yes — Google Play</td></tr>
+<tr><td>Logging habits, streaks, freezes</td><td>No</td></tr>
+<tr><td>Notes and local insights</td><td>No</td></tr>
+<tr><td>Health Connect sync</td><td>No</td></tr>
+<tr><td>Export and encrypted backup</td><td>No</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>The internet is needed to get the app onto the phone and to deliver updates afterwards. Once it is installed, nothing inside it depends on a connection — not the first check-in, not the thousandth.</p>
+
+<details class="faq">
+<summary>If nothing is uploaded, how do backups work?</summary>
+<p>You create them. An export writes a CSV or JSON file to your device, and an encrypted backup writes an AES-256-GCM file protected by your key. Both are plain files you move wherever you like. There is no automatic off-device copy, which is the trade an offline app makes.</p>
+</details>
+
+</div>
+
+<div class="related">
+<h2>Keep reading</h2>
+<ul>
+<li><a href="../../">Steady Ember home</a></li>
+<li><a href="../does-health-connect-sync-drain-battery/">Does Health Connect sync drain my battery?</a></li>
+<li><a href="../../guides/offline-vs-cloud-habit-trackers/">Offline vs Cloud Habit Trackers: What You're Actually Trading Away</a></li>
+</ul>
+</div>
+
+<div class="cta-block">
+<h2>A habit tracker that never asks for a connection</h2>
+<p>Steady Ember is a private, offline habit tracker: local SQLite storage, no account, no analytics, and no internet permission in the release build.</p>
+<a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=dev.steady.steady" target="_blank" rel="noopener">Get Steady Ember on Google Play</a>
+<p class="fine">No account · No ads · Works fully offline</p>
+</div>
+
+</div>
+</main>
+
+<footer class="site">
+<div class="wrap">
+<div>
+<h4>Steady Ember</h4>
+<p>Private habit tracker &amp; daily routine planner.<br>Built for people who want structure without surveillance.</p>
+</div>
+<div>
+<h4>Explore</h4>
+<ul>
+<li><a href="../../guides/">Guides</a></li>
+<li><a href="../">Questions</a></li>
+<li><a href="../../why/">Why Steady Ember</a></li>
+<li><a href="../../#faq">FAQ</a></li>
+</ul>
+</div>
+<div>
+<h4>Get the app</h4>
+<ul>
+<li><a href="https://play.google.com/store/apps/details?id=dev.steady.steady" target="_blank" rel="noopener">Android — Google Play</a></li>
+<li><a href="https://n8es-steady-privacy-policy.static.hf.space">Privacy policy</a></li>
+<li>Developer: N8</li>
+</ul>
+</div>
+</div>
+<div class="foot-bottom">
+© 2026 Steady Ember. All data stays on your device.
+</div>
+</footer>
+</body>
+</html>

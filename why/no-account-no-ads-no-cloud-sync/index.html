@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Steady Ember Has No Account, No Ads, and No Cloud Sync</title>
+<meta name="description" content="The reasoning behind three deliberate absences: no account to breach, no ad SDK shaping the product, no cloud sync holding your history hostage.">
+<link rel="canonical" href="https://n8us.github.io/steady-app/why/no-account-no-ads-no-cloud-sync/">
+<meta property="og:title" content="Why Steady Ember Has No Account, No Ads, and No Cloud Sync">
+<meta property="og:description" content="Three deliberate absences and what each one costs: no account, no advertising SDK, no cloud sync — plus the honest downsides.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://n8us.github.io/steady-app/why/no-account-no-ads-no-cloud-sync/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Why Steady Ember Has No Account, No Ads, and No Cloud Sync">
+<meta name="twitter:description" content="Three deliberate absences and what each one costs: no account, no advertising SDK, no cloud sync — plus the honest downsides.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<header class="site">
+<div class="wrap">
+<a class="wordmark" href="../../">Steady Ember</a>
+<nav class="site-links">
+<a href="../../guides/">Guides</a>
+<a href="../../questions/">Questions</a>
+<a href="../">Why Steady Ember</a>
+<a class="btn-nav" href="https://play.google.com/store/apps/details?id=dev.steady.steady" target="_blank" rel="noopener">Get the app</a>
+</nav>
+</div>
+</header>
+
+<main class="page">
+<div class="wrap">
+<p class="crumb"><a href="../../">Home</a> · <a href="../">Why Steady Ember</a> · No account, no ads, no cloud sync</p>
+<h1>Why Steady Ember Has No Account, No Ads, and No Cloud Sync</h1>
+<p class="lede">Three things this habit tracker deliberately does not have, the reasoning behind each one, and what each of them costs you.</p>
+<p class="meta">Updated 27 September 2026 · 6 min read</p>
+
+<div class="prose">
+
+<p>Absences are easy to market, easy to fake and easy to misread as missing features. This page sets out why this app ships without an account, without advertising and without cloud sync: what each decision buys, what it protects against, and where it makes your life harder.</p>
+
+<h2>No account: nothing to reset, nothing to harvest</h2>
+
+<p>An account exists to identify you to a server. Once that server exists, so does a record: an email address, a creation timestamp, a device list, and a log of what was checked off and when. That record can be misconfigured into public view, breached, or quietly assembled into a profile. For a habit tracker the contents are unusually personal — medication, sleep, the things you have decided to change.</p>
+
+<p>Removing the account removes the whole class of problem rather than a slice of it. There is no password to reset, no email to verify, no server-side profile to breach, and no session to time out. It also removes the friction that matters most in practice: the moment at 6am when you open the app to log last night and are asked to sign in again before you can do anything.</p>
+
+<p>What it changes is the shape of the risk. With no account, the only copy of your record is on a device you control, and there is no address attached to it anywhere. The trade is that nobody can restore it for you either — which is the same trade described in the cloud sync section below.</p>
+
+<h2>No ads: no SDK with an incentive to hold your attention</h2>
+
+<p>An advertising-supported app needs attention to pay for itself, and the usual way to buy attention is session time. That incentive reaches into design: more notifications, more surfaces, more reasons to open the app than the habit requires. An ad SDK also has to load, which means network calls, device identifiers, and a third-party library with its own policy attached to yours.</p>
+
+<p>This app bundles no advertising SDK. The free tier — up to 6 habits at once, with streaks, notes and history intact — is funded by an optional paid tier that lifts the limit. The incentive is therefore to be worth paying for rather than to be opened more often. A tracker you can put down is a tracker that is working.</p>
+
+<p>There is a quieter benefit: nothing depends on measuring you, so nothing has to ask for a network connection to display a habit list. That is what makes the next absence possible rather than merely noble.</p>
+
+<h2>No cloud sync: nothing holding your history hostage</h2>
+
+<p>Sync is the feature that quietly converts a local database into a server record. It is also what makes leaving expensive. Export the file, re-enter the habits, discover the notes were not included, find the statistics stopped at some arbitrary date. None of that has to be deliberate. It is simply what happens when the canonical copy of your history belongs to whoever runs the server.</p>
+
+<p>Storing the database in local SQLite on the device removes the leverage. You can export to CSV or JSON whenever you like, and create an AES-256-GCM encrypted backup protected by your own key token. Health Connect integration for steps, hydration and sleep runs on the device as well, so even the automatic data is written locally. Leaving is a file you save, not an account you close.</p>
+
+<blockquote>Sync is convenient on the day you change phones and expensive on every other day of your life.</blockquote>
+
+<h2>What you give up</h2>
+
+<p>Three absences have a real cost, and it is only fair to name it plainly.</p>
+
+<ul>
+<li><strong>No live sync between devices.</strong> Moving to a new phone means exporting your data or restoring an encrypted backup yourself. Two phones will not show the same streak in real time.</li>
+<li><strong>No automatic off-device copy.</strong> A lost, wiped or stolen phone without a recent backup takes the history with it.</li>
+<li><strong>You are responsible for the export.</strong> Nothing will remind you, and uninstalling before you have made one is unrecoverable.</li>
+<li><strong>No web dashboard.</strong> Your habits live on the Android device and the home screen widget, not in a browser you can open anywhere.</li>
+</ul>
+
+<p>Those are the price of the three sections above, and they are not minor. The bet underneath is narrower than "local is always better": a habit tracker should be cheap to leave, and a little maintenance from you beats a standing relationship with a server. If you live on two phones and want the same number on both today, a sync-first tracker is the better tool, and this one is not pretending otherwise.</p>
+
+<details class="faq">
+<summary>Does an encrypted backup on my own phone protect me if I lose the phone?</summary>
+<p>Only halfway. The backup is encrypted with your key token, which means a copy you have moved elsewhere — a computer, a drive, a second device — stays unreadable to anyone who finds it. A backup that never leaves the phone protects your privacy but not your recovery. Once the history starts to matter to you, move a copy off the device.</p>
+</details>
+
+<hr>
+
+<h2>What is left when the three are gone</h2>
+
+<p>Steady Ember is what remains: a habit tracker with simple checks, numeric counts, and medication dose slots with multi-slot daily reminders; streak freezes with a retroactive recovery window; daily notes with a local, deterministic tone and insight engine rather than a cloud AI reading your journal; statistics and heatmaps, flexible schedules, custom reminder channels, 8 themes, a home widget, and archiving that keeps a finished habit's history. Android only, built with Flutter.</p>
+
+<p>The free tier runs up to 6 habits at once. Streaks, notes and history stay intact as you archive, and archiving a completed habit frees the slot. If you want the checks behind these claims, <a href="../private-habit-tracker-checklist/">What to Look for in a Private Habit Tracker</a> walks through them one at a time. For the testable definition of the phrase itself, see <a href="../what-privacy-first-means/">What "Privacy-First" Actually Means in a Habit Tracker</a>.</p>
+
+</div>
+
+<div class="related">
+<h2>Related reading</h2>
+<ul>
+<li><a href="../private-habit-tracker-checklist/">What to Look for in a Private Habit Tracker</a></li>
+<li><a href="../../guides/track-habits-without-an-account/">How to Track Habits Without an Account</a></li>
+<li><a href="../../questions/does-steady-ember-work-without-internet/">Does Steady Ember work without internet?</a></li>
+</ul>
+</div>
+
+<div class="cta-block">
+<h2>Three absences, one calm habit tracker</h2>
+<p>Steady Ember runs entirely offline: no sign-up, no advertising SDKs, no cloud sync. Local SQLite storage with CSV and JSON export whenever you want your history back. Up to 6 habits free — unlimited on the paid tier.</p>
+<a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=dev.steady.steady" target="_blank" rel="noopener">Get Steady Ember on Google Play</a>
+<p class="fine">No account · No ads · Works fully offline</p>
+</div>
+
+</div>
+</main>
+
+<footer class="site">
+<div class="wrap">
+<div>
+<h4>Steady Ember</h4>
+<p>Private habit tracker &amp; daily routine planner.<br>Built for people who want structure without surveillance.</p>
+</div>
+<div>
+<h4>Explore</h4>
+<ul>
+<li><a href="../../guides/">Guides</a></li>
+<li><a href="../../questions/">Questions</a></li>
+<li><a href="../">Why Steady Ember</a></li>
+<li><a href="../../#faq">FAQ</a></li>
+</ul>
+</div>
+<div>
+<h4>Get the app</h4>
+<ul>
+<li><a href="https://play.google.com/store/apps/details?id=dev.steady.steady" target="_blank" rel="noopener">Android — Google Play</a></li>
+<li><a href="https://n8es-steady-privacy-policy.static.hf.space">Privacy policy</a></li>
+<li>Developer: N8</li>
+</ul>
+</div>
+</div>
+<div class="foot-bottom">
+© 2026 Steady Ember. All data stays on your device.
+</div>
+</footer>
+</body>
+</html>

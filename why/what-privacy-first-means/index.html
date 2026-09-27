@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What "Privacy-First" Actually Means in a Habit Tracker, Explained</title>
+<meta name="description" content="Seven testable criteria behind the phrase privacy-first, where to verify each one yourself, and how Steady Ember measures against them.">
+<link rel="canonical" href="https://n8us.github.io/steady-app/why/what-privacy-first-means/">
+<meta property="og:title" content="What &quot;Privacy-First&quot; Actually Means in a Habit Tracker">
+<meta property="og:description" content="Privacy-first is easy to claim. Seven testable criteria, where to check each one, and how this tracker measures against them.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://n8us.github.io/steady-app/why/what-privacy-first-means/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="What &quot;Privacy-First&quot; Actually Means in a Habit Tracker">
+<meta name="twitter:description" content="Privacy-first is easy to claim. Seven testable criteria, where to check each one, and how this tracker measures against them.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<header class="site">
+<div class="wrap">
+<a class="wordmark" href="../../">Steady Ember</a>
+<nav class="site-links">
+<a href="../../guides/">Guides</a>
+<a href="../../questions/">Questions</a>
+<a href="../">Why Steady Ember</a>
+<a class="btn-nav" href="https://play.google.com/store/apps/details?id=dev.steady.steady" target="_blank" rel="noopener">Get the app</a>
+</nav>
+</div>
+</header>
+
+<main class="page">
+<div class="wrap">
+<p class="crumb"><a href="../../">Home</a> · <a href="../">Why Steady Ember</a> · What privacy-first means</p>
+<h1>What "Privacy-First" Actually Means in a Habit Tracker</h1>
+<p class="lede">Privacy-first has no definition, no certification and no cost to say. Here is a definition you can test: seven criteria, the exact place to verify each one, and a plain account of how this tracker measures against them.</p>
+<p class="meta">Updated 27 September 2026 · 6 min read</p>
+
+<div class="prose">
+
+<p>Almost every habit app now describes itself as private or privacy-first. The phrase is not a standard, a certification or a legal category, which makes it a poor basis for a decision on its own. It becomes useful only when it is turned into tests that can be passed or failed.</p>
+
+<p>Each criterion below names the specific place to look — a screen, a section of the policy, a file — rather than asking you to take a sentence on trust. The final section applies them to this tracker.</p>
+
+<h2>1. Data minimisation</h2>
+
+<p><strong>What it means:</strong> the app collects only what a feature you actually use requires. Habit data needs a name, a schedule, a completion time and, if you write them, your notes. It does not need an address book, a location history or an advertising identifier.</p>
+
+<p><strong>How to verify it:</strong> start with the store listing's data safety section, then read the privacy policy's description of each data type. Minimisation looks like a short, specific list you can match line by line to features you have turned on. Categories you cannot connect to anything you have done are the finding.</p>
+
+<h2>2. Local-first storage</h2>
+
+<p><strong>What it means:</strong> the working copy of your data lives on the device, and the network is optional rather than assumed. What you did today is written to a database on your phone, not queued for upload.</p>
+
+<p><strong>How to verify it:</strong> test it twice. The privacy policy should name the mechanism — a local database file, in plain language — and the app should complete its core tasks with aeroplane mode on. Check-in a habit, write a note, open your statistics. If any of them stall or fail, something is reaching out.</p>
+
+<h2>3. No third-party analytics or advertising SDKs</h2>
+
+<p><strong>What it means:</strong> no third-party code inside the build reporting your usage anywhere. Such libraries run under someone else's policy and can start collecting things the app's own policy never mentioned.</p>
+
+<p><strong>How to verify it:</strong> read the third-party, analytics and advertising sections of the privacy policy, then compare them with the store listing's data shared disclosure. A specific statement about what is and is not bundled is a stronger signal than silence in both places. If advertising is disclosed, understand that the revenue model and the privacy claim are in tension by construction.</p>
+
+<h2>4. Least-privilege permissions, down to no internet permission at all</h2>
+
+<p><strong>What it means:</strong> the build requests only what its features need, when it needs it. The strongest version is a release build that does not declare internet access at all — a build with no network permission cannot phone home, whatever future code might wish.</p>
+
+<p><strong>How to verify it:</strong> on Android, open Settings, Apps, the app, Permissions. This shows the declared list whether or not you have granted anything — the honest view of the build. Map each entry to a feature you intend to use, then ask the harder question: does the core task need a network at all? If not, the absence of the permission is the proof.</p>
+
+<h2>5. Encryption at rest for backups</h2>
+
+<p><strong>What it means:</strong> a backup file is unreadable without a key, so a copy in a downloads folder or a chat thread tells an attacker nothing. Look for a modern authenticated cipher — AES-256-GCM — rather than an unspecified claim of being "encrypted".</p>
+
+<p><strong>How to verify it:</strong> check two things. First, the policy or the backup screen should name the algorithm and say where the key is kept; if the key is yours, nobody else can decrypt it, including the developer. Second, create a backup and open the file: if you can read your own notes in it, it is not encrypted at rest.</p>
+
+<h2>6. Transparency about what happens on uninstall</h2>
+
+<p><strong>What it means:</strong> a direct answer to a question most people ask too late: if I remove this app, what exists afterwards?</p>
+
+<p><strong>How to verify it:</strong> read the deletion or retention section of the privacy policy. It should state whether data lives only on the device, whether any server-side copy ever existed, and how long anything else is retained. A policy that answers the question is doing its job; a policy that avoids it has still told you something.</p>
+
+<h2>7. Export as an exit right</h2>
+
+<p><strong>What it means:</strong> your history is yours to take, in a format that does not depend on the app that produced it. Export is what separates owning a record from renting one.</p>
+
+<p><strong>How to verify it:</strong> find the export screen inside the app, not the policy. Check the formats — open ones such as CSV and JSON remain readable anywhere; a proprietary archive needs the app forever. Check whether export is free, and whether it covers everything: habits, completions, notes, not just a summary.</p>
+
+<hr>
+
+<h2>How Steady Ember measures against each</h2>
+
+<div class="table-scroll">
+<table class="features">
+<thead>
+<tr><th>Criterion</th><th>Where you verify it</th><th>Steady Ember</th></tr>
+</thead>
+<tbody>
+<tr><td>Data minimisation</td><td>Store data safety, policy data sections</td><td>Habits, completions, notes and preferences only — nothing collected for measurement or advertising</td></tr>
+<tr><td>Local-first storage</td><td>Policy wording, aeroplane mode test</td><td>All data in a local SQLite database on the device; fully usable offline</td></tr>
+<tr><td>No third-party SDKs</td><td>Policy third-party section, data shared</td><td>No analytics or advertising SDKs — no Firebase, no Mixpanel</td></tr>
+<tr><td>Least-privilege permissions</td><td>Settings, Apps, Permissions</td><td>Notifications for reminder channels; Health Connect only if you enable it; no internet permission in the release build</td></tr>
+<tr><td>Encrypted backups</td><td>Backup screen, then open the file</td><td>AES-256-GCM backup envelopes protected by your personal hex key token</td></tr>
+<tr><td>Uninstall transparency</td><td>Deletion section of the policy</td><td>Nothing held on a server — the record goes with the app unless you export it</td></tr>
+<tr><td>Export as an exit right</td><td>The export menu itself</td><td>One-tap CSV and JSON export of the full history, available on the free tier</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>One criterion cannot be checked from a table: whether the app behaves the way it claims on your own phone. Run the checks yourself with <a href="../private-habit-tracker-checklist/">What to Look for in a Private Habit Tracker</a>, or read <a href="../no-account-no-ads-no-cloud-sync/">why the network is left out of the picture</a>.</p>
+
+</div>
+
+<div class="related">
+<h2>Related reading</h2>
+<ul>
+<li><a href="../private-habit-tracker-checklist/">What to Look for in a Private Habit Tracker</a></li>
+<li><a href="../no-account-no-ads-no-cloud-sync/">Why Steady Ember Has No Account, No Ads, and No Cloud Sync</a></li>
+<li><a href="../../questions/habit-data-if-i-uninstall-the-app/">What happens to my habit data if I uninstall the app?</a></li>
+</ul>
+</div>
+
+<div class="cta-block">
+<h2>Privacy you can check on your own phone</h2>
+<p>Steady Ember is a private, offline habit tracker: local SQLite storage, no account, no analytics SDKs, and an export menu that always works. Up to 6 habits free — unlimited on the paid tier.</p>
+<a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=dev.steady.steady" target="_blank" rel="noopener">Get Steady Ember on Google Play</a>
+<p class="fine">No account · No ads · Works fully offline</p>
+</div>
+
+</div>
+</main>
+
+<footer class="site">
+<div class="wrap">
+<div>
+<h4>Steady Ember</h4>
+<p>Private habit tracker &amp; daily routine planner.<br>Built for people who want structure without surveillance.</p>
+</div>
+<div>
+<h4>Explore</h4>
+<ul>
+<li><a href="../../guides/">Guides</a></li>
+<li><a href="../../questions/">Questions</a></li>
+<li><a href="../">Why Steady Ember</a></li>
+<li><a href="../../#faq">FAQ</a></li>
+</ul>
+</div>
+<div>
+<h4>Get the app</h4>
+<ul>
+<li><a href="https://play.google.com/store/apps/details?id=dev.steady.steady" target="_blank" rel="noopener">Android — Google Play</a></li>
+<li><a href="https://n8es-steady-privacy-policy.static.hf.space">Privacy policy</a></li>
+<li>Developer: N8</li>
+</ul>
+</div>
+</div>
+<div class="foot-bottom">
+© 2026 Steady Ember. All data stays on your device.
+</div>
+</footer>
+</body>
+</html>

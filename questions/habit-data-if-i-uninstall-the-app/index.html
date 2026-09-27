@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Happens to My Habit Data If I Uninstall the App?</title>
+<meta name="description" content="Uninstalling removes the local database. Before you uninstall, export to CSV/JSON or make an AES-256-GCM backup, then restore after reinstalling.">
+<link rel="canonical" href="https://n8us.github.io/steady-app/questions/habit-data-if-i-uninstall-the-app/">
+<meta property="og:title" content="What Happens to My Habit Data If I Uninstall the App?">
+<meta property="og:description" content="The local database goes with the app. Export to CSV/JSON or create an AES-256-GCM encrypted backup before uninstalling, then restore afterwards.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://n8us.github.io/steady-app/questions/habit-data-if-i-uninstall-the-app/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="What Happens to My Habit Data If I Uninstall the App?">
+<meta name="twitter:description" content="The local database goes with the app. Export to CSV/JSON or create an AES-256-GCM encrypted backup before uninstalling, then restore afterwards.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<header class="site">
+<div class="wrap">
+<a class="wordmark" href="../../">Steady Ember</a>
+<nav class="site-links">
+<a href="../../guides/">Guides</a>
+<a href="../">Questions</a>
+<a href="../../why/">Why Steady Ember</a>
+<a class="btn-nav" href="https://play.google.com/store/apps/details?id=dev.steady.steady" target="_blank" rel="noopener">Get the app</a>
+</nav>
+</div>
+</header>
+
+<main class="page">
+<div class="wrap">
+<p class="crumb"><a href="../../">Home</a> · <a href="../">Questions</a> · Data if you uninstall</p>
+<h1>What happens to my habit data if I uninstall the app?</h1>
+<p class="lede">It goes with the app — which is why the backup has to happen first.</p>
+<p class="meta">Updated 27 September 2026 · 3 min read</p>
+
+<div class="prose">
+
+<div class="answer">
+<span class="tag">Short answer</span>
+<p>Uninstalling removes your habit data with it. Everything is stored in a local database on the phone, and Android clears that storage when the app is deleted. Before you uninstall, export to CSV or JSON, or create an AES-256-GCM encrypted backup, then restore it after reinstalling.</p>
+</div>
+
+<h2>Why the data disappears</h2>
+
+<p>Steady Ember keeps 100% of your data in an SQLite database in the app's local storage. There is no account, no cloud copy and no server holding a mirror of your history — that is the whole point of an offline tracker. The consequence is that the app's storage and your data are the same thing: remove one and you remove the other.</p>
+
+<p>This is honest rather than alarming. You are not losing a copy somewhere else; you are losing the only copy, unless you made one.</p>
+
+<h2>What to do before you uninstall</h2>
+
+<ol class="steps">
+<li><strong>Export.</strong> Write your history out as a CSV or JSON file. CSV is convenient for spreadsheets, JSON keeps the full structure of habits, streaks and notes.</li>
+<li><strong>Or create an encrypted backup.</strong> An AES-256-GCM backup file is protected by your personal key token. Keep that key somewhere you will find it again — without it, the file cannot be opened.</li>
+<li><strong>Move the file off the phone.</strong> A backup sitting in the same storage that is about to be cleared is not a backup. Copy it to a computer, a drive or another safe location.</li>
+<li><strong>Reinstall, then restore.</strong> After reinstalling — on the same phone or a new one — import the file and enter your key for an encrypted backup.</li>
+<li><strong>Check the result.</strong> Confirm your habits, streaks and notes are back before you delete the original file.</li>
+</ol>
+
+<h2>Moving phones instead of uninstalling</h2>
+
+<p>The same sequence applies when you are changing devices. Nothing is carried across automatically: the new phone starts empty, and the old phone's database stays on the old phone until it is wiped or sold. Exporting from the old device first is the entire migration.</p>
+
+<details class="faq">
+<summary>Can the developer recover my data after an uninstall?</summary>
+<p>No. There is no server copy to restore from, because nothing is ever uploaded. Once the local database is deleted, it is gone — which is exactly why export and encrypted backups exist as first-class features rather than afterthoughts.</p>
+</details>
+
+</div>
+
+<div class="related">
+<h2>Related questions</h2>
+<ul>
+<li><a href="../../">Steady Ember home</a></li>
+<li><a href="../does-steady-ember-work-without-internet/">Does Steady Ember work without internet?</a></li>
+<li><a href="../is-steady-ember-free/">Is Steady Ember free?</a></li>
+</ul>
+</div>
+
+<div class="cta-block">
+<h2>Own the only copy of your history</h2>
+<p>Steady Ember is a private, offline habit tracker with CSV and JSON export and AES-256-GCM encrypted backups. Up to 6 habits free — unlimited on the paid tier.</p>
+<a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=dev.steady.steady" target="_blank" rel="noopener">Get Steady Ember on Google Play</a>
+<p class="fine">No account · No ads · Works fully offline</p>
+</div>
+
+</div>
+</main>
+
+<footer class="site">
+<div class="wrap">
+<div>
+<h4>Steady Ember</h4>
+<p>Private habit tracker &amp; daily routine planner.<br>Built for people who want structure without surveillance.</p>
+</div>
+<div>
+<h4>Explore</h4>
+<ul>
+<li><a href="../../guides/">Guides</a></li>
+<li><a href="../">Questions</a></li>
+<li><a href="../../why/">Why Steady Ember</a></li>
+<li><a href="../../#faq">FAQ</a></li>
+</ul>
+</div>
+<div>
+<h4>Get the app</h4>
+<ul>
+<li><a href="https://play.google.com/store/apps/details?id=dev.steady.steady" target="_blank" rel="noopener">Android — Google Play</a></li>
+<li><a href="https://n8es-steady-privacy-policy.static.hf.space">Privacy policy</a></li>
+<li>Developer: N8</li>
+</ul>
+</div>
+</div>
+<div class="foot-bottom">
+© 2026 Steady Ember. All data stays on your device.
+</div>
+</footer>
+</body>
+</html>

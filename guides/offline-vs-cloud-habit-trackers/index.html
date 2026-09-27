@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Offline vs Cloud Habit Trackers: What You're Actually Trading Away</title>
+<meta name="description" content="Offline vs cloud habit trackers, weighed honestly: sync and easy restore on one side, accounts, servers and export on the other.">
+<link rel="canonical" href="https://n8us.github.io/steady-app/guides/offline-vs-cloud-habit-trackers/">
+<meta property="og:title" content="Offline vs Cloud Habit Trackers: What You're Actually Trading Away">
+<meta property="og:description" content="Sync and easy restore on one side, accounts, servers and manual export on the other. What each architecture actually costs you.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://n8us.github.io/steady-app/guides/offline-vs-cloud-habit-trackers/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Offline vs Cloud Habit Trackers: What You're Actually Trading Away">
+<meta name="twitter:description" content="Sync and easy restore on one side, accounts, servers and manual export on the other. What each architecture actually costs you.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<header class="site">
+<div class="wrap">
+<a class="wordmark" href="../../">Steady Ember</a>
+<nav class="site-links">
+<a href="../">Guides</a>
+<a href="../../questions/">Questions</a>
+<a href="../../why/">Why Steady Ember</a>
+<a class="btn-nav" href="https://play.google.com/store/apps/details?id=dev.steady.steady" target="_blank" rel="noopener">Get the app</a>
+</nav>
+</div>
+</header>
+
+<main class="page">
+<div class="wrap">
+<p class="crumb"><a href="../../">Home</a> · <a href="../">Guides</a> · Offline vs cloud</p>
+<h1>Offline vs Cloud Habit Trackers: What You're Actually Trading Away</h1>
+<p class="lede">Every habit tracker answers one question before you ever tap a checkbox: where does your data live. The answer decides what you gain, what you give up, and what happens the day something goes wrong.</p>
+<p class="meta">Updated 27 September 2026 · 10 min read</p>
+
+<div class="prose">
+
+<p>The offline-versus-cloud argument is usually framed as a privacy argument, and it is one. But privacy is only a third of it. The other two thirds are practical: what happens when you change phones, and what happens when someone else's system fails. Those are the parts people discover too late, usually in the form of an empty history screen after a reinstall.</p>
+
+<p>This guide treats the two architectures as genuine trade-offs, because that is what they are. Neither wins outright. What each one costs is different, and the right answer depends on which cost you would rather carry.</p>
+
+<h2>What cloud sync actually buys you</h2>
+
+<p>The case for a cloud-backed tracker is not weak. It solves real problems, and it solves them silently enough that you stop noticing they were ever problems.</p>
+
+<ul>
+<li><strong>Multiple devices, one record.</strong> Phone and tablet, or a work phone and a personal one, show the same history without you doing anything.</li>
+<li><strong>Restore on a new phone.</strong> Sign in, wait, and the streak is there. No file, no export step, no remembering what you did last time.</li>
+<li><strong>Nothing to lose in your pocket.</strong> If the handset is dropped in a canal, the data is not in the handset.</li>
+<li><strong>Shared or household records.</strong> Some people want a partner or a carer to see the same log. That is much easier when there is a server in the middle.</li>
+</ul>
+
+<p>Notice what unites those points: they are all about <em>continuity without your involvement</em>. The system handles the transfer. You never make a decision about your own data, because a decision is never presented to you. For a lot of people, that is the right trade and it is not a close call.</p>
+
+<h2>What cloud sync quietly costs you</h2>
+
+<p>The costs are equally real, and they are mostly structural rather than dramatic. You do not usually lose access. You acquire obligations.</p>
+
+<h3>An account, and everything attached to it</h3>
+<p>A cloud service needs to know who you are, so there is an email address, a password, a verification message, and a reset flow you will need again at some point. The habit data itself is rarely the sensitive part of that arrangement — the fact that you track certain habits at certain times can be. Sleep habits, medication schedules, and mood-related routines say more about you than a to-do list does.</p>
+
+<h3>Server-side copies you do not control</h3>
+<p>Your records exist somewhere you have never seen, on hardware you do not own, under a policy you agreed to once. That arrangement comes with dependencies: the provider's infrastructure, its uptime, its security practices, its subcontractors, and its business viability. A service outage does not stop you logging — but it can stop you syncing, restoring, or signing in at exactly the moment you need those things most.</p>
+
+<h3>Deletion that is a request, not an action</h3>
+<p>When data is local, removing it is a file operation you perform yourself. When data is remote, deletion is a request you make to someone else and then hope was fully honoured, including any backups and derived copies. The provider's account-deletion policy becomes part of your data story whether you read it or not.</p>
+
+<h3>Third-party infrastructure in the path</h3>
+<p>Most cloud apps do not run their own data centres. They rent, and the rental chain may include hosting, analytics, crash reporting, and email delivery. Each hop is another organisation with some relationship to your records. None of this is inherently malicious; all of it expands the number of parties involved in a log you thought of as yours.</p>
+
+<h2>What offline architecture buys you</h2>
+
+<p>An offline tracker stores everything on the device, in a local database file, and never moves it anywhere unless you explicitly move it yourself. The gains follow directly from that one decision.</p>
+
+<ul>
+<li><strong>No account.</strong> No sign-up, no password to reset, no email to verify, no server-side profile holding your routines.</li>
+<li><strong>Nothing to breach centrally.</strong> A database of a million users' habits is an attractive target. A file on your phone is not a target in the same sense — there is no central store to attack.</li>
+<li><strong>No server outages.</strong> There is no server. Logging works in aeroplane mode, on a mountain, in a basement, and during someone else's incident report.</li>
+<li><strong>Local file ownership.</strong> You know where the data is, you can see it, and you can copy it. Ownership stops being a legal claim and becomes a folder you can point at.</li>
+<li><strong>No telemetry by default.</strong> With no network use, there is no behavioural signal leaving with your check-ins.</li>
+</ul>
+
+<p>The psychological effect is worth mentioning too. People write more honest notes when they are not writing into a service. A private log is allowed to be unflattering.</p>
+
+<h2>What offline architecture costs you</h2>
+
+<p>Honesty requires saying this plainly: offline means no sync, and no sync means you are the sync layer.</p>
+
+<p>If you want your history on a second device, you export a file and import it. If you change phones, you move that file across yourself. If you forget, you start with an empty record — not because the data was taken from you, but because there was never a copy anywhere else. The convenience that cloud restores provide is real, and an offline design deliberately does not provide it.</p>
+
+<p>There is also a discipline cost. A cloud app backs up whether you remember or not. An offline app can offer export tools and encrypted backups, but using them is your habit to build. Any honest comparison should count that as a genuine point in the cloud column.</p>
+
+<h2>The trade, laid out</h2>
+
+<div class="table-scroll">
+<table class="features">
+<thead>
+<tr><th>Dimension</th><th>Offline</th><th>Cloud</th></tr>
+</thead>
+<tbody>
+<tr><td>Account required</td><td>No</td><td>Yes</td></tr>
+<tr><td>Where data lives</td><td>Local file on device</td><td>Provider servers, plus local cache</td></tr>
+<tr><td>Multi-device use</td><td>Manual export and import</td><td>Automatic</td></tr>
+<tr><td>New phone restore</td><td>You transfer a backup file</td><td>Sign in and wait</td></tr>
+<tr><td>Works with no connection</td><td>Yes, fully</td><td>Logging usually yes, sync no</td></tr>
+<tr><td>Central breach exposure</td><td>None by design</td><td>Depends on provider</td></tr>
+<tr><td>Deletion</td><td>Immediate, in your hands</td><td>Requested from provider</td></tr>
+<tr><td>Who handles migration</td><td>You</td><td>The service</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>Read the last row carefully. Almost every other row is a consequence of it. Cloud hands you migration in exchange for handing over custody; offline keeps custody and hands you the work.</p>
+
+<h2>Questions worth asking before you choose</h2>
+
+<ol>
+<li><strong>How many devices will I realistically use?</strong> One phone for everything makes sync much less valuable than the marketing suggests.</li>
+<li><strong>What is in my notes?</strong> If your logs would embarrass you in a leak, the accountless option is doing more work than you might think.</li>
+<li><strong>Am I willing to set a monthly reminder to export?</strong> If not, a service that backs up silently may suit you better, and that is a sensible admission rather than a weakness.</li>
+<li><strong>What happens when the service is discontinued?</strong> Ask whether your history can be exported in a readable format, and whether you would know how to open it.</li>
+<li><strong>Do I actually want a second reader?</strong> Shared visibility is a genuine feature. Decide whether it is a feature you need.</li>
+</ol>
+
+<blockquote>The right question is not "which is more private." It is "which set of responsibilities am I willing to carry."</blockquote>
+
+<h2>Where Steady Ember sits in this trade</h2>
+
+<p><a href="../../">Steady Ember</a> is on the offline side, deliberately and without an option to switch. Your habits, history, and notes live in a local SQLite database on the device. There is no account, no analytics SDKs, and the release build does not request internet permission at all — the app has no network capability to misuse.</p>
+
+<p>What that leaves you with is the offline column of the table above, including the obligations. So the export side is built to be used rather than merely present: CSV and JSON export for keeping a readable copy, and AES-256-GCM encrypted backups for moving to a new phone. Both are yours to run on your own schedule, and both produce files you can hold yourself.</p>
+
+<p>That is the whole trade, stated honestly. You give up automatic sync and effortless restore. You keep custody of the file, no account, no central database to be breached, no outage that can stop a check-in, and no third party in the path between you and your own record. Whether that exchange suits you depends on how much migration work you are happy to do — and on how much you would rather not have an account in the first place.</p>
+
+<p>If the account question is the part you are still turning over, <a href="../track-habits-without-an-account/">Is It Possible to Track Habits Without an Account? Here's What Changes</a> walks through exactly what is different once sign-up disappears.</p>
+
+</div>
+
+<div class="related">
+<h2>Related guides</h2>
+<ul>
+<li><a href="../track-habits-without-an-account/">Is It Possible to Track Habits Without an Account? Here's What Changes</a></li>
+<li><a href="../habit-streaks-and-streak-freezes/">How Habit Streaks Work — and Why Streak Freezes Beat Perfect Streaks</a></li>
+<li><a href="../../questions/is-steady-ember-free/">Is Steady Ember free?</a></li>
+</ul>
+</div>
+
+<div class="cta-block">
+<h2>An offline tracker that treats you as the owner</h2>
+<p>Steady Ember keeps everything in a local SQLite database, with no account, no analytics SDKs, and no internet permission in the release build. Export to CSV or JSON, or take an AES-256-GCM encrypted backup whenever you like. Up to 6 habits free — unlimited on the paid tier.</p>
+<a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=dev.steady.steady" target="_blank" rel="noopener">Get Steady Ember on Google Play</a>
+<p class="fine">No account · No ads · Works fully offline</p>
+</div>
+
+</div>
+</main>
+
+<footer class="site">
+<div class="wrap">
+<div>
+<h4>Steady Ember</h4>
+<p>Private habit tracker &amp; daily routine planner.<br>Built for people who want structure without surveillance.</p>
+</div>
+<div>
+<h4>Explore</h4>
+<ul>
+<li><a href="../">Guides</a></li>
+<li><a href="../../questions/">Questions</a></li>
+<li><a href="../../why/">Why Steady Ember</a></li>
+<li><a href="../../#faq">FAQ</a></li>
+</ul>
+</div>
+<div>
+<h4>Get the app</h4>
+<ul>
+<li><a href="https://play.google.com/store/apps/details?id=dev.steady.steady" target="_blank" rel="noopener">Android — Google Play</a></li>
+<li><a href="https://n8es-steady-privacy-policy.static.hf.space">Privacy policy</a></li>
+<li>Developer: N8</li>
+</ul>
+</div>
+</div>
+<div class="foot-bottom">
+© 2026 Steady Ember. All data stays on your device.
+</div>
+</footer>
+</body>
+</html>
