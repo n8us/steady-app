@@ -2,7 +2,7 @@
 Steady Ember — a privacy-first habit tracker for Android. Local-only data, no accounts, no cloud.
 
 About Steady Ember
-Steady Ember is a calm, privacy-first routine planner. Track check-ins, numeric targets, and medication schedules with generous streak freezes, honest local insights, and full data ownership — no accounts, no cloud, no analytics trackers.
+Steady is a calm, privacy-first routine planner. Track check-ins, numeric targets, and medication schedules with generous streak freezes, honest local insights, and full data ownership — no accounts, no cloud, no analytics trackers.
 100% offline — all data lives in a local SQLite database on-device
 Gentle streaks — freeze days and retroactive recovery so one bad week doesn't erase your history
 All habit types — simple checks, numeric counts, and multi-slot medication reminders
