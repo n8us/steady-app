@@ -145,6 +145,10 @@ nav.site-links a:not(.btn-nav) { display: none; }
 .prose p { margin: 0 0 16px; color: var(--ink-soft); }
 .prose p strong, .prose li strong { color: var(--ink); }
 .prose a { color: var(--forest); text-decoration: underline; text-underline-offset: 2px; }
+.prose a.btn { text-decoration: none; }
+.prose a.btn-primary { background: var(--forest); color: var(--paper); }
+.prose a.btn-primary:hover { background: #17493f; }
+.prose a.btn-secondary { background: transparent; color: var(--ink); border: 1px solid var(--line-strong); }
 .prose ul, .prose ol { margin: 0 0 18px; padding-left: 20px; color: var(--ink-soft); }
 .prose li { margin-bottom: 8px; }
 .prose hr { border: none; border-top: 1px solid var(--line); margin: 36px 0; }
